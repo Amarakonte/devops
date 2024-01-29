@@ -5,7 +5,7 @@ node {
     }
 
     stages {
-        stage('Which java'){
+        stage('Wich java'){
             sh 'java --version'
         }
 
