@@ -1,12 +1,22 @@
 node {
     def mvnHome = tool 'maven-3.5.2'
-
-    stage('Clone repo'){
-        git branch: 'main', url: 'https://github.com/Amarakonte/devops.git'
+    tools {
+        jdk "JDK"
     }
 
-    stage('Build project'){
-        sh "'${mvnHome}/bin/mvn' -B -DskipTests clean package"
+    stages {
+        stage('Wich java'){
+            sh 'java --version'
+        }
+
+        stage('Clone repo'){
+            git branch: 'main', url: 'https://github.com/Amarakonte/devops.git'
+        }
+
+        stage('Build project'){
+            sh "'${mvnHome}/bin/mvn' -X -B -DskipTests clean package"
+        }
     }
+
     
 }
