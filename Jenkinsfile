@@ -29,6 +29,16 @@ pipeline {
                 }
             }
         }
+
+        stage('Compilation et tests') {
+            steps {
+                script {
+                    // Compile le projet et exécute les tests
+                    sh 'mvn clean test'
+                }
+            }
+        }
+
         
         stage('Publication de la Javadoc') {
             steps {
