@@ -34,7 +34,7 @@ pipeline {
             steps {
                 script {
                     // Génère la Javadoc
-                    sh 'demo/demo/mvn javadoc:javadoc'
+                    sh 'clean compile javadoc:javadoc'
                     
                     // Archive la Javadoc en tant qu'artefact
                     archiveArtifacts artifacts: 'target/site/apidocs/**/*', fingerprint: true
