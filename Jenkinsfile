@@ -37,7 +37,7 @@ pipeline {
                     sh 'mvn -f pom.xml javadoc:javadoc'
                     
                     // Archive la Javadoc en tant qu'artefact
-                    archiveArtifacts artifacts: 'target/apidocs/*', fingerprint: true
+                    archiveArtifacts artifacts: '**/src/main/**/target/site/apidocs/**/*', fingerprint: true
                 }
             }
         }
@@ -46,7 +46,7 @@ pipeline {
     post {
         always {
             // Archiver les artefacts même en cas d'échec
-            archiveArtifacts artifacts: 'target/*.jar', fingerprint: true
+            archiveArtifacts artifacts: '**/src/main/**/target/*.jar', fingerprint: true
         }
     }
 }
