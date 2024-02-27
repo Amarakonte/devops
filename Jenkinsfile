@@ -25,8 +25,7 @@ pipeline {
             steps {
                 script {
                     // Compile le projet sans exécuter les tests
-                    sh 'mvn clean compile'
-                    // sh 'mvn clean compile -DskipTests'
+                    sh 'mvn clean compile -DskipTests'
                 }
             }
         }

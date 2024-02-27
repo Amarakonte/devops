@@ -14,7 +14,7 @@ public class CalculatorTest {
     public void testMultiply() {
         Calculator calculator = new Calculator();
         int result = calculator.multiply(3, 4);
-        // assertEquals(12, result);
+        assertEquals(12, result);
     }
     
     @Test
