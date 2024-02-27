@@ -10,9 +10,9 @@ pipeline {
         pollSCM('H/3 * * * *') // Vérifier les changements du SCM toutes les 3 minutes
     }
     
-    // options {
-    //     skipStagesAfterUnstable() // Pour ne pas continuer après un échec de compilation
-    // }
+    options {
+        skipStagesAfterUnstable() // Pour ne pas continuer après un échec de compilation
+    }
 
     stages {
         stage('Récupération du code source') {
