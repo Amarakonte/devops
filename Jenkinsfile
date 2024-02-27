@@ -58,5 +58,10 @@ pipeline {
             // Archiver les artefacts même en cas d'échec
             archiveArtifacts artifacts: '**', fingerprint: true
         }
+    
+        success {
+            // Publier le rapport de test en cas de succès
+            junit '**/target/surefire-reports/TEST-*.xml'
+        }
     }
 }
