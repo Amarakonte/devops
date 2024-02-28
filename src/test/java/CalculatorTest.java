@@ -23,4 +23,18 @@ public class CalculatorTest {
         int result = calculator.divide(8, 2);
         assertEquals(4, result);
     }
+
+    @Test
+    public void testDivide() {
+        Calculator calculator = new Calculator();
+        int result = calculator.divide(8, 2);
+        assertEquals(4, result);
+    }
+
+    @Test
+    public void testDivide() {
+        Calculator calculator = new Calculator();
+        int result = calculator.divide(8, 2);
+        assertEquals(4, result);
+    }
 }
